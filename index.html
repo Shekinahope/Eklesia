@@ -4,24 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
   </head>
   <body>
     <div class="weather-app">
       <header>
         <form>
-          <input type="search" placeholder="Enter a city" required />
-          <input type="submit" value="Search" />
+          <input
+            type="search"
+            placeholder="Enter a city"
+            class="search-input"
+            required
+          />
+          <input type="submit" value="Search" class="submit-button" />
         </form>
       </header>
       <main>
-        <div>
-          <h1>Paris</h1>
-          <p>
-            Tuesday 14:49, scattered clouds <br />Humidity: 66%, Wind: 3.13km/h
-          </p>
+        <div class="weather-app-data">
+          <div>
+            <h1 class="app-city">Paris</h1>
+            <p class="app-details">
+              Tuesday 14:49, scattered clouds <br />Humidity:
+              <strong>66%</strong>, Wind:
+              <strong>3.13km/h</strong>
+            </p>
+          </div>
+          <div class="app-temperature">
+            <div class="temp-icon">🌥</div>
+            <div class="temp-value">12</div>
+            <div class="temp-unit">°C</div>
+          </div>
         </div>
-        <div>🌥 12°C</div>
       </main>
       <footer>
         This project was coded by
