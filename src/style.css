@@ -59,17 +59,18 @@ main {
   display: flex;
 }
 .temp-icon {
-  font-size: 44px;
-  margin-top: 24px;
+  width: 88px;
+  height: 88px;
 }
 .temp-value {
   font-size: 88px;
   font-weight: 700;
+  line-height: 88px;
   margin-left: 10px;
 }
 .temp-unit {
   font-size: 28px;
-  margin-top: 16px;
+  margin-top: 6px;
 }
 footer {
   border-top: 1px solid #f9f7fe;
