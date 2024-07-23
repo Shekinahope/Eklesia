@@ -25,6 +25,8 @@ function refreshWeather(response) {
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
 
   windElement.innerHTML = `${response.data.wind.speed}km/h`;
+
+  getForecast(response.data.city);
 }
 function formatDate(date) {
   let minutes = date.getMinutes();
@@ -62,14 +64,20 @@ function handleSearchSubmit(event) {
 
   searchCity(searchInput.value);
 }
-function displayForecast() {
-  let days = ["Tue", "Wed", "Thur", "Fri", "Sat"];
+function getForecast(city) {
+  let apiKey = "13353e672oa3f715a42c6bb0570t4a46";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query={query}&key={key}https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+  axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  let days = ["Wed", "Thur", "Fri", "Sat", "Sun"];
   let forecastHtml = "";
   days.forEach(function (day) {
     forecastHtml =
       forecastHtml +
       `<div class="weather-forecast-day">
-            <div class="weather-forecast-date">Tue</div>
+            <div class="weather-forecast-date">${day}</div>
             <div class="weather-forecast-icon">🌥</div>
             <div class="weather-forecast-temperatures">
               <div class="weather-forecast-temperature">
@@ -87,4 +95,3 @@ function displayForecast() {
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 searchCity("Nairobi");
-displayForecast();
